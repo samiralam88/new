@@ -1,1 +1,367 @@
-h
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samir Alam - Medical Student Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            padding: 4rem 2rem;
+            background: white;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #764ba2;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-right: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            margin: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .about h3 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Passion Section */
+        .passion {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            margin: 2rem;
+            border-left: 5px solid #667eea;
+        }
+
+        .passion h3 {
+            font-size: 2rem;
+            color: #764ba2;
+            margin-bottom: 1.5rem;
+        }
+
+        .passion-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .passion-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .passion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .passion-card h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .passion-card p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #764ba2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .about h3,
+            .passion h3 {
+                font-size: 1.8rem;
+            }
+
+            .cta-button {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .passion-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <h1>Samir Alam</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#passion">Passion</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h2>Samir Alam</h2>
+                <p class="subtitle">Medical Student | Healthcare Advocate</p>
+                <p>
+                    Welcome to my portfolio. I am a passionate medical student dedicated to advancing healthcare and making a positive impact in people's lives. With a commitment to excellence and compassion, I strive to become a physician who combines cutting-edge medical knowledge with empathetic patient care.
+                </p>
+                <a href="#contact" class="cta-button">Get in Touch</a>
+                <a href="#passion" class="cta-button">Learn More</a>
+            </div>
+            <div class="hero-image">
+                <img src="annie-spratt-XgXxJVyP1vA-unsplash.jpg" alt="Samir Alam - Medical Student">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h3>About Me</h3>
+        <p>
+            I am Samir Alam, a dedicated medical student with a passion for healthcare excellence and patient care. My journey in medicine is driven by a deep commitment to understanding complex medical conditions and developing innovative solutions to improve patient outcomes.
+        </p>
+        <p>
+            Throughout my medical education, I have cultivated strong analytical and interpersonal skills that enable me to work effectively in multidisciplinary healthcare teams. My academic pursuits are complemented by practical clinical experience where I have learned the importance of empathy, resilience, and continuous learning in the medical field.
+        </p>
+        <p>
+            Beyond the classroom and clinic, I am engaged in medical research, community health initiatives, and mentoring aspiring healthcare professionals. I believe in the power of medicine to transform lives and communities.
+        </p>
+    </section>
+
+    <section id="passion" class="passion container">
+        <h3>🏥 My Medical Passion</h3>
+        <div class="passion-content">
+            <div class="passion-card">
+                <h4>Patient Care Excellence</h4>
+                <p>Committed to providing compassionate, evidence-based care that prioritizes patient well-being and holistic health outcomes.</p>
+            </div>
+            <div class="passion-card">
+                <h4>Medical Research</h4>
+                <p>Engaged in advancing medical science through rigorous research, contributing to breakthroughs in diagnosis, treatment, and prevention.</p>
+            </div>
+            <div class="passion-card">
+                <h4>Community Health</h4>
+                <p>Dedicated to improving public health and addressing healthcare disparities through community outreach and preventive medicine programs.</p>
+            </div>
+            <div class="passion-card">
+                <h4>Clinical Excellence</h4>
+                <p>Striving to master clinical skills and medical knowledge to provide accurate diagnoses and effective treatment plans.</p>
+            </div>
+            <div class="passion-card">
+                <h4>Continuous Learning</h4>
+                <p>Committed to staying current with medical advancements and evolving best practices throughout my medical career.</p>
+            </div>
+            <div class="passion-card">
+                <h4>Mentorship & Education</h4>
+                <p>Passionate about mentoring the next generation of healthcare professionals and promoting medical education.</p>
+              
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2026 Samir Alam. All rights reserved.</p>
+        <p>Medical Student | Healthcare Professional</p>
+        <p>
+            <a href="https://github.com/samiralam88">GitHub</a> | 
+            <a href="mailto:samir@example.com">Email</a> | 
+            <a href="https://linkedin.com">LinkedIn</a>
+        </p>
+        <p><small>Passionate about advancing healthcare and making a difference in people's lives.</small></p>
+    </footer>
+</body>
+</html>
